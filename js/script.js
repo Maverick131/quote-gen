@@ -10,14 +10,63 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+let quotes = [
+{
+  quote: "he greatest glory in living lies not in never falling, but in rising every time we fall.",
+  source: "Nelson Mandela",
+  citation: "https://blog.hubspot.com/sales/famous-quotes",
+  year: "2021",
 
+},
+// Eye break
+{
+  quote: "The way to get started is to quit talking and begin doing.",
+  source: "Walt Disney",
+  citation: "https://blog.hubspot.com/sales/famous-quotes",
+  year: "1950",
+
+},
+//Eye break
+{
+  quote: "If life were predictable it would cease to be life, and be without flavor.",
+  source: "Eleanor Roosevelt",
+  citation: "https://blog.hubspot.com/sales/famous-quotes",
+  year: "600 BC"
+
+},
+//Eye break
+
+{
+  quote: "Life is what happens when you're busy making other plans.",
+  source: "John Lennon",
+  citation: "https://blog.hubspot.com/sales/famous-quotes",
+  year: ""
+
+},
+//Eye break
+{
+  quote: "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+  source: "Oprah Winfrey",
+  citation: "https://blog.hubspot.com/sales/famous-quotes",
+  year: "2008"
+
+},
+];
+// Test array functionality
+//console.log(quotes[0]);
 
 
 /***
  * `getRandomQuote` function
 ***/
+let getRandomQuote = () => {
+  randomNumber = Math.floor(Math.random() * 5)
+  console.log(randomNumber)
+  console.log(quotes[randomNumber]);
 
-
+};
+//check random quote indexer 
+getRandomQuote();
 
 /***
  * `printQuote` function
@@ -30,4 +79,4 @@ project 1 - A Random Quote Generator
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+//document.getElementById('load-quote').addEventListener("click", printQuote, false);
