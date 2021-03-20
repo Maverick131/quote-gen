@@ -12,7 +12,7 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
 {
-  quote: "he greatest glory in living lies not in never falling, but in rising every time we fall.",
+  quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
   source: "Nelson Mandela",
   citation: "https://blog.hubspot.com/sales/famous-quotes",
   year: "2021",
@@ -61,22 +61,36 @@ let quotes = [
 ***/
 let getRandomQuote = () => {
   randomNumber = Math.floor(Math.random() * 5)
-  console.log(randomNumber)
-  console.log(quotes[randomNumber]);
-
+  //console.log(randomNumber)
+  return quotes[randomNumber];
 };
 //check random quote indexer 
-getRandomQuote();
+//getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
+let printQuote = () => {
+  let randomQuoteObj = getRandomQuote();
+  let htmlString = '';
+  htmlString += `<p class="quote"> ${randomQuoteObj.quote} </p>`; 
+  if (randomQuoteObj.source) {
+    htmlString += `<p class="source"> ${randomQuoteObj.source}`;
+  } if (randomQuoteObj.citation) {
+    htmlString += `<span class="citation"> ${randomQuoteObj.citation} </span>`;
+  } if (randomQuoteObj.year) {
+    htmlString += `<span class="year"> ${randomQuoteObj.year} </span>`;
+  }
+htmlString += `</p>`;
+return htmlString;
+document.getElementById('quote-box').innerHTML = htmlString; 
+};
 
+document.getElementById('quote-box').innerHTML = printQuote();
 
-
+//console.log(printQuote())
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
-//document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
