@@ -35,7 +35,6 @@ let quotes = [
 
 },
 //Eye break
-
 {
   quote: "Life is what happens when you're busy making other plans.",
   source: "John Lennon",
@@ -59,8 +58,10 @@ let quotes = [
 /***
  * `getRandomQuote` function
 ***/
+
 let getRandomQuote = () => {
   randomNumber = Math.floor(Math.random() * 5)
+  //Check randomNumber is less than 5
   //console.log(randomNumber)
   return quotes[randomNumber];
 };
@@ -70,6 +71,7 @@ let getRandomQuote = () => {
 /***
  * `printQuote` function
 ***/
+
 let printQuote = () => {
   let randomQuoteObj = getRandomQuote();
   let htmlString = '';
@@ -82,8 +84,7 @@ let printQuote = () => {
     htmlString += `<span class="year"> ${randomQuoteObj.year} </span>`;
   }
 htmlString += `</p>`;
-return htmlString;
-document.getElementById('quote-box').innerHTML = htmlString; 
+return document.getElementById('quote-box').innerHTML = htmlString; 
 };
 
 document.getElementById('quote-box').innerHTML = printQuote();
